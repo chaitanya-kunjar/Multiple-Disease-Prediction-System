@@ -49,7 +49,7 @@ with st.sidebar:
 # Diabetes Prediction Page
 if selected == "Diabetes Prediction":
     # Page title
-    st.title("Diabetes Prediction using ML")
+    st.title("Diabetes Prediction")
 
     # Columns for input fields
     col1, col2, col3 = st.columns(3)
@@ -103,7 +103,7 @@ if selected == "Diabetes Prediction":
 # Heart Disease Prediction Page
 if selected == "Heart Disease Prediction":
     # Page title
-    st.title("Heart Disease Prediction using ML")
+    st.title("Heart Disease Prediction")
 
     # Columns for input fields
     col1, col2, col3 = st.columns(3)
@@ -173,7 +173,7 @@ if selected == "Heart Disease Prediction":
 # Parkinsons Disease Prediction Page
 if selected == "Parkinsons Disease Prediction":
     # Page title
-    st.title("Parkinsons Disease Prediction using ML")
+    st.title("Parkinsons Disease Prediction")
 
     # Columns for input fields
     col1, col2, col3, col4, col5 = st.columns(5)
@@ -263,3 +263,4 @@ if selected == "Parkinsons Disease Prediction":
             parkinsons_diagnosis = "The person does not have Parkinson's disease"
 
     st.success(parkinsons_diagnosis)
+
