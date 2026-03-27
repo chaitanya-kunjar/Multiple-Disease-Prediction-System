@@ -296,7 +296,7 @@ if selected == "Heart Disease Prediction":
             Use less oil, salt, and sugar
             
             Prefer healthy fats (nuts, seeds, olive/mustard oil)
-            
+            '''
     st.success(heart_diagnosis)
 
 
