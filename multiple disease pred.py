@@ -136,8 +136,48 @@ if selected == "Diabetes Prediction":
             Aim for 7–8 hours of quality sleep
             '''
         else:
-            diab_diagnosis = "The person is not diabetic"
+            diab_diagnosis = '''
+            THE PERSON IS NOT DIABETIC
+            1. 🥗 Eat a Balanced & Healthy Diet
+            
+            Include whole grains, fruits, vegetables, and protein
+            
+            Limit sugary drinks, junk food, and refined carbs
+            
+            Choose healthy fats (nuts, seeds, oils)
 
+            2. 🏃‍♂️ Stay Physically Active
+
+            Aim for 30–45 minutes of daily exercise
+            
+            Walking, jogging, yoga, or sports all help
+
+            Keeps weight and blood sugar in control
+
+            3. ⚖️ Maintain a Healthy Weight
+            
+            Excess body fat increases risk of diabetes
+            
+            Even 5–10% weight control reduces risk significantly
+            
+            Combine diet + exercise for best results
+
+            4. 🚫 Limit Sugar & Processed Foods
+
+            Avoid excess sweets, soft drinks, packaged snacks
+            
+            Watch for hidden sugars in foods
+            
+            Prefer natural and home-cooked meals
+
+            5. 🧪 Get Regular Health Check-ups
+
+            Check blood sugar periodically (especially after age 30)
+            
+            Early detection helps prevent complications
+            
+            Monitor blood pressure and cholesterol too
+            '''
     st.success(diab_diagnosis)
 
 
@@ -204,10 +244,59 @@ if selected == "Heart Disease Prediction":
         heart_prediction = heart_disease_model.predict([user_input])
         # Print the result
         if heart_prediction[0] == 1:
-            heart_diagnosis = "The person is having heart disease"
-        else:
-            heart_diagnosis = "The person does not have any heart disease"
+            heart_diagnosis = '''
+            THE PERSON HAS HEART DISEASE
+            1. 🥗 Follow a Heart-Healthy Diet
 
+            Eat fruits, vegetables, whole grains, and lean proteins
+            
+            Reduce salt, saturated fat, and fried foods
+            
+            Include heart-friendly foods like nuts, seeds, and fish
+
+            2.🚶‍♂️ Stay Physically Active (as advised by doctor)
+
+            Engage in light to moderate exercise like walking or yoga
+            
+            Avoid overexertion—follow medical advice
+            
+            Helps improve circulation and heart strength
+
+            3. 💊 Take Medications Regularly
+
+            Take prescribed medicines (e.g., for BP, cholesterol) on time
+            
+            Never stop medication without consulting your doctor
+            
+            Keep track of your prescriptions and follow-ups
+
+            4. 🚭 Avoid Smoking & Limit Alcohol
+
+            Smoking significantly worsens heart disease
+            
+            Avoid tobacco completely
+            
+            Limit or avoid alcohol consumption
+
+            5. 😌 Manage Stress & Monitor Health
+
+            Practice stress-reducing activities like meditation or deep breathing
+            
+            Regularly check blood pressure, cholesterol, and heart health
+            
+            Get proper sleep and attend routine check-ups
+            '''
+        else:
+            heart_diagnosis = '''
+            THE PERSON DOES NOT HAVE HEART DISEASE
+            1. 🥗 Eat a Heart-Healthy Diet
+
+            Eat plenty of fruits, vegetables, whole grains, and pulses
+            
+            Use less oil, salt, and sugar
+            
+            Prefer healthy fats (nuts, seeds, olive/mustard oil)
+            
     st.success(heart_diagnosis)
 
 
