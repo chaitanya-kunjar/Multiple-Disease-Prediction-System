@@ -94,7 +94,7 @@ if selected == "Diabetes Prediction":
         # Print the result
         if diab_prediction[0] == 1:
             diab_diagnosis = '''
-            The person is diabetic
+            THE PERSON IS DIABETIC
             1. 🥗 Maintain a Balanced Diet
             
             Focus on low glycemic index foods (whole grains, vegetables, legumes
