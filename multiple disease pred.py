@@ -102,6 +102,7 @@ if selected == "Diabetes Prediction":
             Avoid excess sugar, refined carbs, and processed foods
             
             Eat small, regular meals to keep blood sugar stable
+            
             2. 🏃‍♂️ Regular Physical Activity
             
             At least 30 minutes of moderate exercise daily
@@ -109,6 +110,7 @@ if selected == "Diabetes Prediction":
             Activities like walking, yoga, or cycling help control blood glucose
             
             Improves insulin sensitivity
+            
             3. 💊 Take Medication as Prescribed
             
             Follow your doctor’s advice strictly
@@ -116,6 +118,7 @@ if selected == "Diabetes Prediction":
             Never skip doses of insulin or oral medicines
             
             Keep regular check-ups for dosage adjustments
+            
             4. 📊 Monitor Blood Sugar Levels
             
             Check glucose levels regularly using a glucometer
@@ -123,6 +126,7 @@ if selected == "Diabetes Prediction":
             Keep a record to understand patterns
             
             Helps prevent complications
+            
             5. 🧘‍♀️ Manage Stress & Get Good Sleep
             
             Stress can raise blood sugar levels
