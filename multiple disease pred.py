@@ -296,6 +296,36 @@ if selected == "Heart Disease Prediction":
             Use less oil, salt, and sugar
             
             Prefer healthy fats (nuts, seeds, olive/mustard oil)
+
+            2. 🏃‍♂️ Stay Regularly Active
+
+            Aim for 150 minutes of moderate exercise per week
+            
+            Mix cardio (walking, running, cycling) with strength training
+            
+            Even small habits (taking stairs, walking more) add up
+
+            3. ⚖️ Maintain a Healthy Weight
+
+            Excess weight increases risk of high blood pressure, diabetes, and heart disease
+            
+            Focus on consistency, not crash diets
+            
+            Track waist size as well as weight
+
+            4. 😌 Manage Stress & Get Good Sleep
+
+            Aim for 7–9 hours of sleep
+            
+            Chronic stress raises heart risk over time
+            
+            Try meditation, hobbies, or spending time outdoors
+
+            5. 🚭 Avoid Smoking & Control Alcohol Intake
+
+            Smoking is one of the biggest risk factors for heart disease
+            
+            If you drink, keep it moderate
             '''
     st.success(heart_diagnosis)
 
@@ -388,9 +418,92 @@ if selected == "Parkinsons Disease Prediction":
         parkinsons_prediction = parkinsons_model.predict([user_input])
         # Print the result
         if parkinsons_prediction[0] == 1:
-            parkinsons_diagnosis = "The person has Parkinson's disease"
-        else:
-            parkinsons_diagnosis = "The person does not have Parkinson's disease"
+            parkinsons_diagnosis = '''
+            THE PERSON HAS PARKINSON'S DISEASE
+            
+            1. 🚶‍♂️ Keep Moving with Regular Exercise
+            
+            Exercise helps improve mobility, balance, and mood
+            
+            Good options: walking, stretching, yoga, tai chi
+            
+            Physical therapy can slow functional decline
 
+            2. 🍽️ Maintain a Nutritious, Easy-to-Eat Diet
+
+            Eat fiber-rich foods to prevent constipation
+            
+            Stay well hydrated
+            
+            Choose soft foods if swallowing becomes difficult
+            
+            Small, frequent meals can help with energy levels
+
+            3. 💊 Take Medications on Time
+
+            Timing is crucial for Parkinson’s medications to work effectively
+            
+            Use alarms or pill organizers
+
+            Never change dosage without consulting a doctor
+
+            4. 🧠 Support Mental & Emotional Health
+
+            Stay socially connected—talk with family or support groups
+            
+            Engage in brain activities (reading, puzzles)
+            
+            Watch for signs of depression or anxiety
+
+            5. 🏠 Make the Home Safe & Accessible
+
+            Remove tripping hazards (loose rugs, clutter)
+            
+            Install grab bars and proper lighting
+            
+            Use assistive devices if needed
+            '''
+        else:
+            parkinsons_diagnosis = '''
+            THE PERSON DOES NOT HAVE PARKINSON'S DISEASE
+            
+            1. 🏃‍♂️ Stay Physically Active
+
+            Regular exercise supports brain function and nerve health
+            
+            Aim for a mix of cardio + strength + flexibility
+            
+            Even brisk walking daily makes a difference
+
+            2. 🥗 Eat a Brain-Healthy Diet
+
+            Focus on antioxidant-rich foods (berries, leafy greens)
+            
+            Include omega-3 fatty acids (fish, walnuts, flaxseeds)
+            
+            Reduce processed and fried foods
+
+            3. 🧠 Keep Your Brain Engaged
+
+            Challenge your brain with puzzles, reading, or learning new skills
+            
+            Social interaction also helps maintain cognitive health
+
+            4. 😴 Prioritize Good Sleep & Stress Control
+
+            Aim for 7–9 hours of quality sleep
+            
+            Chronic stress may affect brain health over time
+
+            Try meditation, yoga, or relaxation techniques
+
+            5. ☣️ Limit Exposure to Toxins
+
+            Avoid unnecessary exposure to pesticides and harmful chemicals
+            
+            Use protective gear if working with chemicals
+            
+            Maintain a clean, well-ventilated environment
+            '''
     st.success(parkinsons_diagnosis)
 
