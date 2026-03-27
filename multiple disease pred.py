@@ -94,6 +94,26 @@ if selected == "Diabetes Prediction":
         # Print the result
         if diab_prediction[0] == 1:
             diab_diagnosis = "The person is diabetic"
+            print('1. 🥗 Maintain a Balanced Diet')
+            print('\tFocus on low glycemic index foods (whole grains, vegetables, legumes')
+            print('\tAvoid excess sugar, refined carbs, and processed foods')
+            print('\tEat small, regular meals to keep blood sugar stable')
+            print('2. 🏃‍♂️ Regular Physical Activity')
+            print('\tAt least 30 minutes of moderate exercise daily')
+            print('\tActivities like walking, yoga, or cycling help control blood glucose')
+            print('\tImproves insulin sensitivity')
+            print('3. 💊 Take Medication as Prescribed')
+            print('\tFollow your doctor’s advice strictly')
+            print('\tNever skip doses of insulin or oral medicines')
+            print('\tKeep regular check-ups for dosage adjustments')
+            print('4. 📊 Monitor Blood Sugar Levels')
+            print('\tCheck glucose levels regularly using a glucometer')
+            print('\tKeep a record to understand patterns')
+            print('\tHelps prevent complications')
+            print('5. 🧘‍♀️ Manage Stress & Get Good Sleep')
+            print('\tStress can raise blood sugar levels')
+            print('\tPractice meditation, deep breathing, or relaxation techniques')
+            print('\tAim for 7–8 hours of quality sleep')
         else:
             diab_diagnosis = "The person is not diabetic"
 
