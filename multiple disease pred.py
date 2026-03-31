@@ -93,91 +93,9 @@ if selected == "Diabetes Prediction":
         )
         # Print the result
         if diab_prediction[0] == 1:
-            diab_diagnosis = '''
-            THE PERSON IS DIABETIC
-            1. 🥗 Maintain a Balanced Diet
-            
-            Focus on low glycemic index foods (whole grains, vegetables, legumes
-            
-            Avoid excess sugar, refined carbs, and processed foods
-            
-            Eat small, regular meals to keep blood sugar stable
-            
-            2. 🏃‍♂️ Regular Physical Activity
-            
-            At least 30 minutes of moderate exercise daily
-            
-            Activities like walking, yoga, or cycling help control blood glucose
-            
-            Improves insulin sensitivity
-            
-            3. 💊 Take Medication as Prescribed
-            
-            Follow your doctor’s advice strictly
-            
-            Never skip doses of insulin or oral medicines
-            
-            Keep regular check-ups for dosage adjustments
-            
-            4. 📊 Monitor Blood Sugar Levels
-            
-            Check glucose levels regularly using a glucometer
-            
-            Keep a record to understand patterns
-            
-            Helps prevent complications
-            
-            5. 🧘‍♀️ Manage Stress & Get Good Sleep
-            
-            Stress can raise blood sugar levels
-            
-            Practice meditation, deep breathing, or relaxation techniques
-            
-            Aim for 7–8 hours of quality sleep
-            '''
+            diab_diagnosis = '''THE PERSON IS DIABETIC'''
         else:
-            diab_diagnosis = '''
-            THE PERSON IS NOT DIABETIC
-            1. 🥗 Eat a Balanced & Healthy Diet
-            
-            Include whole grains, fruits, vegetables, and protein
-            
-            Limit sugary drinks, junk food, and refined carbs
-            
-            Choose healthy fats (nuts, seeds, oils)
-
-            2. 🏃‍♂️ Stay Physically Active
-
-            Aim for 30–45 minutes of daily exercise
-            
-            Walking, jogging, yoga, or sports all help
-
-            Keeps weight and blood sugar in control
-
-            3. ⚖️ Maintain a Healthy Weight
-            
-            Excess body fat increases risk of diabetes
-            
-            Even 5–10% weight control reduces risk significantly
-            
-            Combine diet + exercise for best results
-
-            4. 🚫 Limit Sugar & Processed Foods
-
-            Avoid excess sweets, soft drinks, packaged snacks
-            
-            Watch for hidden sugars in foods
-            
-            Prefer natural and home-cooked meals
-
-            5. 🧪 Get Regular Health Check-ups
-
-            Check blood sugar periodically (especially after age 30)
-            
-            Early detection helps prevent complications
-            
-            Monitor blood pressure and cholesterol too
-            '''
+            diab_diagnosis = '''THE PERSON IS NOT DIABETIC'''
     st.success(diab_diagnosis)
 
 
@@ -244,89 +162,9 @@ if selected == "Heart Disease Prediction":
         heart_prediction = heart_disease_model.predict([user_input])
         # Print the result
         if heart_prediction[0] == 1:
-            heart_diagnosis = '''
-            THE PERSON HAS HEART DISEASE
-            1. 🥗 Follow a Heart-Healthy Diet
-
-            Eat fruits, vegetables, whole grains, and lean proteins
-            
-            Reduce salt, saturated fat, and fried foods
-            
-            Include heart-friendly foods like nuts, seeds, and fish
-
-            2.🚶‍♂️ Stay Physically Active (as advised by doctor)
-
-            Engage in light to moderate exercise like walking or yoga
-            
-            Avoid overexertion—follow medical advice
-            
-            Helps improve circulation and heart strength
-
-            3. 💊 Take Medications Regularly
-
-            Take prescribed medicines (e.g., for BP, cholesterol) on time
-            
-            Never stop medication without consulting your doctor
-            
-            Keep track of your prescriptions and follow-ups
-
-            4. 🚭 Avoid Smoking & Limit Alcohol
-
-            Smoking significantly worsens heart disease
-            
-            Avoid tobacco completely
-            
-            Limit or avoid alcohol consumption
-
-            5. 😌 Manage Stress & Monitor Health
-
-            Practice stress-reducing activities like meditation or deep breathing
-            
-            Regularly check blood pressure, cholesterol, and heart health
-            
-            Get proper sleep and attend routine check-ups
-            '''
+            heart_diagnosis = '''THE PERSON HAS HEART DISEASE'''
         else:
-            heart_diagnosis = '''
-            THE PERSON DOES NOT HAVE HEART DISEASE
-            1. 🥗 Eat a Heart-Healthy Diet
-
-            Eat plenty of fruits, vegetables, whole grains, and pulses
-            
-            Use less oil, salt, and sugar
-            
-            Prefer healthy fats (nuts, seeds, olive/mustard oil)
-
-            2. 🏃‍♂️ Stay Regularly Active
-
-            Aim for 150 minutes of moderate exercise per week
-            
-            Mix cardio (walking, running, cycling) with strength training
-            
-            Even small habits (taking stairs, walking more) add up
-
-            3. ⚖️ Maintain a Healthy Weight
-
-            Excess weight increases risk of high blood pressure, diabetes, and heart disease
-            
-            Focus on consistency, not crash diets
-            
-            Track waist size as well as weight
-
-            4. 😌 Manage Stress & Get Good Sleep
-
-            Aim for 7–9 hours of sleep
-            
-            Chronic stress raises heart risk over time
-            
-            Try meditation, hobbies, or spending time outdoors
-
-            5. 🚭 Avoid Smoking & Control Alcohol Intake
-
-            Smoking is one of the biggest risk factors for heart disease
-            
-            If you drink, keep it moderate
-            '''
+            heart_diagnosis = '''THE PERSON DOES NOT HAVE HEART DISEASE'''
     st.success(heart_diagnosis)
 
 
@@ -418,92 +256,8 @@ if selected == "Parkinsons Disease Prediction":
         parkinsons_prediction = parkinsons_model.predict([user_input])
         # Print the result
         if parkinsons_prediction[0] == 1:
-            parkinsons_diagnosis = '''
-            THE PERSON HAS PARKINSON'S DISEASE
-            
-            1. 🚶‍♂️ Keep Moving with Regular Exercise
-            
-            Exercise helps improve mobility, balance, and mood
-            
-            Good options: walking, stretching, yoga, tai chi
-            
-            Physical therapy can slow functional decline
-
-            2. 🍽️ Maintain a Nutritious, Easy-to-Eat Diet
-
-            Eat fiber-rich foods to prevent constipation
-            
-            Stay well hydrated
-            
-            Choose soft foods if swallowing becomes difficult
-            
-            Small, frequent meals can help with energy levels
-
-            3. 💊 Take Medications on Time
-
-            Timing is crucial for Parkinson’s medications to work effectively
-            
-            Use alarms or pill organizers
-
-            Never change dosage without consulting a doctor
-
-            4. 🧠 Support Mental & Emotional Health
-
-            Stay socially connected—talk with family or support groups
-            
-            Engage in brain activities (reading, puzzles)
-            
-            Watch for signs of depression or anxiety
-
-            5. 🏠 Make the Home Safe & Accessible
-
-            Remove tripping hazards (loose rugs, clutter)
-            
-            Install grab bars and proper lighting
-            
-            Use assistive devices if needed
-            '''
+            parkinsons_diagnosis = '''THE PERSON HAS PARKINSON'S DISEASE'''
         else:
-            parkinsons_diagnosis = '''
-            THE PERSON DOES NOT HAVE PARKINSON'S DISEASE
-            
-            1. 🏃‍♂️ Stay Physically Active
-
-            Regular exercise supports brain function and nerve health
-            
-            Aim for a mix of cardio + strength + flexibility
-            
-            Even brisk walking daily makes a difference
-
-            2. 🥗 Eat a Brain-Healthy Diet
-
-            Focus on antioxidant-rich foods (berries, leafy greens)
-            
-            Include omega-3 fatty acids (fish, walnuts, flaxseeds)
-            
-            Reduce processed and fried foods
-
-            3. 🧠 Keep Your Brain Engaged
-
-            Challenge your brain with puzzles, reading, or learning new skills
-            
-            Social interaction also helps maintain cognitive health
-
-            4. 😴 Prioritize Good Sleep & Stress Control
-
-            Aim for 7–9 hours of quality sleep
-            
-            Chronic stress may affect brain health over time
-
-            Try meditation, yoga, or relaxation techniques
-
-            5. ☣️ Limit Exposure to Toxins
-
-            Avoid unnecessary exposure to pesticides and harmful chemicals
-            
-            Use protective gear if working with chemicals
-            
-            Maintain a clean, well-ventilated environment
-            '''
+            parkinsons_diagnosis = '''THE PERSON DOES NOT HAVE PARKINSON'S DISEASE'''
     st.success(parkinsons_diagnosis)
 
