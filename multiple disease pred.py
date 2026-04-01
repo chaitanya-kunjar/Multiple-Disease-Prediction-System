@@ -23,21 +23,21 @@ if "last_selected" not in st.session_state:
 
 diabetes_model = pickle.load(
     open(
-        "C:/Users/CHAITANYA/Desktop/Project 1/AI/Multiple Disease Prediction System/Saved models/diabetes_model.sav",
+        "diabetes_model.sav",
         "rb",
     )
 )
 
 heart_disease_model = pickle.load(
     open(
-        "C:/Users/CHAITANYA/Desktop/Project 1/AI/Multiple Disease Prediction System/Saved models/heart_disease_model.sav",
+        "heart_disease_model.sav",
         "rb",
     )
 )
 
 parkinsons_model = pickle.load(
     open(
-        "C:/Users/CHAITANYA/Desktop/Project 1/AI/Multiple Disease Prediction System/Saved models/parkinsons_model.sav",
+        "parkinsons_model.sav",
         "rb",
     )
 )
