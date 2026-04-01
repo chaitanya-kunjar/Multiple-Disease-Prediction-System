@@ -8,26 +8,36 @@ Created on Tue Mar 10 18:07:06 2026
 import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
+from chatbot import get_chatbot_response
+
+if "chat_history" not in st.session_state:
+    st.session_state.chat_history = []
+
+if "initialized" not in st.session_state:
+    st.session_state.initialized = False
+
+if "last_selected" not in st.session_state:
+    st.session_state.last_selected = ""
 
 # Loading the saved models
 
 diabetes_model = pickle.load(
     open(
-        "diabetes_model.sav",
+        "C:/Users/CHAITANYA/Desktop/Project 1/AI/Multiple Disease Prediction System/Saved models/diabetes_model.sav",
         "rb",
     )
 )
 
 heart_disease_model = pickle.load(
     open(
-        "heart_disease_model.sav",
+        "C:/Users/CHAITANYA/Desktop/Project 1/AI/Multiple Disease Prediction System/Saved models/heart_disease_model.sav",
         "rb",
     )
 )
 
 parkinsons_model = pickle.load(
     open(
-        "parkinsons_model.sav",
+        "C:/Users/CHAITANYA/Desktop/Project 1/AI/Multiple Disease Prediction System/Saved models/parkinsons_model.sav",
         "rb",
     )
 )
@@ -45,11 +55,16 @@ with st.sidebar:
         icons=["activity", "heart", "person"],
         default_index=0,
     )
+    
+if st.session_state.last_selected != selected:
+    st.session_state.chat_history = []
+    st.session_state.initialized = False
+    st.session_state.last_selected = selected
 
 # Diabetes Prediction Page
 if selected == "Diabetes Prediction":
     # Page title
-    st.title("Diabetes Prediction")
+    st.title("Diabetes Prediction using ML")
 
     # Columns for input fields
     col1, col2, col3 = st.columns(3)
@@ -80,29 +95,70 @@ if selected == "Diabetes Prediction":
         diab_prediction = diabetes_model.predict(
             [
                 [
-                    Pregnancies,
-                    Glucose,
-                    BloodPressure,
-                    SkinThickness,
-                    Insulin,
-                    BMI,
-                    DiabetesPedigreeFunction,
-                    Age,
+                    float(Pregnancies),
+                    float(Glucose),
+                    float(BloodPressure),
+                    float(SkinThickness),
+                    float(Insulin),
+                    float(BMI),
+                    float(DiabetesPedigreeFunction),
+                    float(Age),
                 ]
             ]
         )
         # Print the result
         if diab_prediction[0] == 1:
-            diab_diagnosis = '''THE PERSON IS DIABETIC'''
+            diab_diagnosis = "High Risk of Diabetes"
         else:
-            diab_diagnosis = '''THE PERSON IS NOT DIABETIC'''
-    st.success(diab_diagnosis)
+            diab_diagnosis = "Low Risk of Diabetes"
+            
+        prediction_summary = f"""
+        Disease: Diabetes
+        Risk: {diab_diagnosis}
+        Glucose: {Glucose}
+        BMI: {BMI}
+        Age: {Age}
+        """
 
+    st.success(diab_diagnosis)
+    
+    if diab_diagnosis != "":
+
+        st.subheader("🤖 AI Health Assistant")
+
+        # Auto AI explanation
+        if not st.session_state.initialized:
+            intro = get_chatbot_response(
+                "Explain my diabetes condition and what I should do",
+                prediction_summary,
+                []
+            )
+            st.session_state.chat_history.append(("assistant", intro))
+            st.session_state.initialized = True
+    
+        # user_input = st.text_input("Ask about your condition...")
+    
+        # if user_input:
+        #     response = get_chatbot_response(
+        #         user_input,
+        #         prediction_summary,
+        #         st.session_state.chat_history
+        #     )
+    
+        #     st.session_state.chat_history.append(("user", user_input))
+        #     st.session_state.chat_history.append(("assistant", response))
+    
+        # Display chat
+        for role, message in st.session_state.chat_history:
+            if role == "user":
+                st.write(f"🧑 You: {message}")
+            else:
+                st.write(f"🤖 AI: {message}")
 
 # Heart Disease Prediction Page
 if selected == "Heart Disease Prediction":
     # Page title
-    st.title("Heart Disease Prediction")
+    st.title("Heart Disease Prediction using ML")
 
     # Columns for input fields
     col1, col2, col3 = st.columns(3)
@@ -162,16 +218,55 @@ if selected == "Heart Disease Prediction":
         heart_prediction = heart_disease_model.predict([user_input])
         # Print the result
         if heart_prediction[0] == 1:
-            heart_diagnosis = '''THE PERSON HAS HEART DISEASE'''
+            heart_diagnosis = "The person is having heart disease"
         else:
-            heart_diagnosis = '''THE PERSON DOES NOT HAVE HEART DISEASE'''
-    st.success(heart_diagnosis)
+            heart_diagnosis = "The person does not have any heart disease"
 
+    st.success(heart_diagnosis)
+    
+    if heart_diagnosis != "":
+
+        prediction_summary = f"""
+        Disease: Heart Disease
+        Result: {heart_diagnosis}
+        Age: {age}
+        Cholesterol: {chol}
+        Blood Pressure: {trestbps}
+        """
+    
+        st.subheader("🤖 AI Health Assistant")
+    
+        if not st.session_state.initialized:
+            intro = get_chatbot_response(
+                "Explain my heart condition and what I should do",
+                prediction_summary,
+                []
+            )
+            st.session_state.chat_history.append(("assistant", intro))
+            st.session_state.initialized = True
+    
+        # user_input = st.text_input("Ask about your heart health...")
+    
+        # if user_input:
+        #     response = get_chatbot_response(
+        #         user_input,
+        #         prediction_summary,
+        #         st.session_state.chat_history
+        #     )
+    
+        #     st.session_state.chat_history.append(("user", user_input))
+        #     st.session_state.chat_history.append(("assistant", response))
+    
+        for role, message in st.session_state.chat_history:
+            if role == "user":
+                st.write(f"🧑 You: {message}")
+            else:
+                st.write(f"🤖 AI: {message}")
 
 # Parkinsons Disease Prediction Page
 if selected == "Parkinsons Disease Prediction":
     # Page title
-    st.title("Parkinsons Disease Prediction")
+    st.title("Parkinsons Disease Prediction using ML")
 
     # Columns for input fields
     col1, col2, col3, col4, col5 = st.columns(5)
@@ -256,8 +351,47 @@ if selected == "Parkinsons Disease Prediction":
         parkinsons_prediction = parkinsons_model.predict([user_input])
         # Print the result
         if parkinsons_prediction[0] == 1:
-            parkinsons_diagnosis = '''THE PERSON HAS PARKINSON'S DISEASE'''
+            parkinsons_diagnosis = "The person has Parkinson's disease"
         else:
-            parkinsons_diagnosis = '''THE PERSON DOES NOT HAVE PARKINSON'S DISEASE'''
-    st.success(parkinsons_diagnosis)
+            parkinsons_diagnosis = "The person does not have Parkinson's disease"
 
+    st.success(parkinsons_diagnosis)
+    
+    if parkinsons_diagnosis != "":
+
+        prediction_summary = f"""
+        Disease: Parkinson's
+        Result: {parkinsons_diagnosis}
+        Fo: {fo}
+        Jitter: {Jitter_percent}
+        Shimmer: {Shimmer}
+        """
+    
+        st.subheader("🤖 AI Health Assistant")
+    
+        if not st.session_state.initialized:
+            intro = get_chatbot_response(
+                "Explain Parkinson's condition and next steps",
+                prediction_summary,
+                []
+            )
+            st.session_state.chat_history.append(("assistant", intro))
+            st.session_state.initialized = True
+    
+        # user_input = st.text_input("Ask about Parkinson's...")
+    
+        # if user_input:
+        #     response = get_chatbot_response(
+        #         user_input,
+        #         prediction_summary,
+        #         st.session_state.chat_history
+        #     )
+    
+        #     st.session_state.chat_history.append(("user", user_input))
+        #     st.session_state.chat_history.append(("assistant", response))
+    
+        for role, message in st.session_state.chat_history:
+            if role == "user":
+                st.write(f"🧑 You: {message}")
+            else:
+                st.write(f"🤖 AI: {message}")
