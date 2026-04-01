@@ -46,7 +46,7 @@ parkinsons_model = pickle.load(
 
 with st.sidebar:
     selected = option_menu(
-        "Multiple Disease Prediction System Using ML",
+        "AI-Driven Multiple Disease Prediction",
         [
             "Diabetes Prediction",
             "Heart Disease Prediction",
